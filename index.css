@@ -1,0 +1,454 @@
+:root {
+  --color-white: #fff;
+  --color-gray: #2f2f2d;
+  --color-yellow: #fef53a;
+  --color-background: #151513;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+}
+
+.fibonacci {
+  width: 22.25rem;
+  height: 13.75rem;
+  overflow: hidden;
+  position: relative;
+  animation: reveal-border 5s linear forwards;
+}
+
+.box {
+  z-index: 1;
+  position: absolute;
+  visibility: hidden;
+  animation: 5s linear forwards;
+  border: 0.0625rem var(--color-white) solid;
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+
+.box1 {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 13.75rem;
+  animation-name: up-movement;
+}
+
+.box2 {
+  top: 0;
+  right: 0;
+  width: 8.5rem;
+  height: 8.5rem;
+  animation-delay: 0.5s;
+  animation-name: right-movement;
+}
+
+.box3 {
+  right: 0;
+  bottom: 0;
+  width: 5.25rem;
+  height: 5.25rem;
+  animation-delay: 1s;
+  animation-name: up-movement;
+}
+
+.box4 {
+  bottom: 0;
+  right: 5.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  animation-delay: 1.5s;
+  animation-name: left-movement;
+}
+
+.box5 {
+  width: 2rem;
+  height: 2rem;
+  right: 6.5rem;
+  bottom: 3.25rem;
+  animation-delay: 2s;
+  animation-name: left-movement;
+}
+
+.box6 {
+  bottom: 4rem;
+  right: 5.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  animation-delay: 2.5s;
+  animation-name: up-movement;
+}
+
+.box7 {
+  right: 5.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  bottom: 3.25rem;
+  animation-delay: 3s;
+  animation-name: left-movement;
+}
+
+.box8 {
+  right: 6rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  bottom: 3.25rem;
+  animation-delay: 3.5s;
+  animation-name: left-movement;
+}
+
+.box9 {
+  right: 6.25rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  bottom: 3.75rem;
+  animation-delay: 4s;
+  animation-name: right-movement;
+}
+
+.box10 {
+  right: 6rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  bottom: 3.75rem;
+  animation-delay: 4.5s;
+  animation-name: left-movement;
+}
+
+.curve {
+  z-index: 2;
+  border-radius: 50%;
+  position: absolute;
+  visibility: hidden;
+  animation: 2s linear forwards;
+  border: 0.1rem var(--color-white) solid;
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+
+.curve1 {
+  top: 0;
+  left: 0;
+  width: 27.5rem;
+  height: 27.5rem;
+  animation-delay: 20.8s;
+  animation-duration: 3s;
+  animation-name: top-left-curve;
+}
+
+.curve2 {
+  top: 0;
+  right: 0;
+  width: 17rem;
+  height: 17rem;
+  animation-delay: 19.8s;
+  animation-name: top-right-curve;
+}
+
+.curve3 {
+  right: 0;
+  bottom: 0;
+  width: 10.5rem;
+  height: 10.5rem;
+  animation-delay: 18.5s;
+  animation-name: bottom-right-curve;
+}
+
+.curve4 {
+  bottom: 0;
+  right: 2rem;
+  width: 6.5rem;
+  height: 6.5rem;
+  animation-delay: 17.15s;
+  animation-name: bottom-left-curve;
+}
+
+.curve5 {
+  width: 4rem;
+  height: 4rem;
+  right: 4.5rem;
+  bottom: 1.25rem;
+  animation-delay: 15.8s;
+  animation-name: top-left-curve;
+}
+
+.curve6 {
+  width: 2.5rem;
+  right: 5.25rem;
+  height: 2.5rem;
+  bottom: 2.75rem;
+  animation-delay: 14.45s;
+  animation-name: top-right-curve;
+}
+
+.curve7 {
+  width: 1.5rem;
+  right: 5.25rem;
+  height: 1.5rem;
+  bottom: 3.25rem;
+  animation-delay: 13.1s;
+  animation-name: bottom-right-curve;
+}
+
+.curve8 {
+  width: 1rem;
+  height: 1rem;
+  right: 5.5rem;
+  bottom: 3.25rem;
+  animation-delay: 11.75s;
+  animation-name: bottom-left-curve;
+}
+
+.curve9 {
+  right: 6rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  bottom: 3.5rem;
+  animation-delay: 10.35s;
+  animation-name: top-left-curve;
+}
+
+.curve10 {
+  right: 6rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  bottom: 3.5rem;
+  animation-delay: 9s;
+  animation-name: top-right-curve;
+}
+
+@keyframes reveal-border {
+  0% {
+    border: 0.0625rem transparent solid;
+  }
+  100% {
+    border: 0.0625rem var(--color-gray) solid;
+  }
+}
+
+@keyframes top-left-curve {
+  0%,
+  100% {
+    visibility: visible;
+  }
+  33.33% {
+    clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 50% 0%);
+  }
+  66.67% {
+    clip-path: polygon(50% 50%, 50% 0%, 0% 0%, 0% 0%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 50% 0%, 0% 0%, 0% 50%);
+  }
+}
+
+@keyframes top-right-curve {
+  0%,
+  100% {
+    visibility: visible;
+  }
+  33.33% {
+    clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%);
+  }
+  66.67% {
+    clip-path: polygon(50% 50%, 100% 50%, 100% 0%, 100% 0%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 100% 50%, 100% 0%, 50% 0%);
+  }
+}
+
+@keyframes bottom-left-curve {
+  0%,
+  100% {
+    visibility: visible;
+  }
+  33.33% {
+    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%);
+  }
+  66.67% {
+    clip-path: polygon(50% 50%, 0% 50%, 0% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0% 50%, 0% 100%, 50% 100%);
+  }
+}
+
+@keyframes bottom-right-curve {
+  0%,
+  100% {
+    visibility: visible;
+  }
+  33.33% {
+    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%);
+  }
+  66.67% {
+    clip-path: polygon(50% 50%, 50% 100%, 100% 100%, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 50% 100%, 100% 100%, 100% 50%);
+  }
+}
+
+@keyframes up-movement {
+  0%,
+  100% {
+    visibility: visible;
+  }
+  20% {
+    clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
+  }
+  40% {
+    clip-path: polygon(50% 50%, 0% 100%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  }
+  60% {
+    clip-path: polygon(50% 50%, 0% 100%, 0% 0%, 100% 0%, 100% 0%, 100% 0%);
+  }
+  80% {
+    clip-path: polygon(50% 50%, 0% 100%, 0% 0%, 100% 0%, 100% 100%, 100% 100%);
+  }
+  100% {
+    border: 0.0625rem var(--color-gray) solid;
+    clip-path: polygon(50% 50%, 0% 100%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes right-movement {
+  0%,
+  100% {
+    visibility: visible;
+  }
+  20% {
+    clip-path: polygon(50% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  }
+  40% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  }
+  60% {
+    clip-path: polygon(
+      50% 50%,
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      100% 100%,
+      100% 100%
+    );
+  }
+  80% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+  }
+  100% {
+    border: 0.0625rem var(--color-gray) solid;
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+  }
+}
+
+@keyframes down-movement {
+  0%,
+  100% {
+    visibility: visible;
+  }
+  20% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  }
+  40% {
+    clip-path: polygon(
+      50% 50%,
+      100% 0%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%
+    );
+  }
+  60% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%, 0% 100%, 0% 100%);
+  }
+  80% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 0% 0%);
+  }
+  100% {
+    border: 0.0625rem var(--color-gray) solid;
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 100% 0%);
+  }
+}
+
+@keyframes left-movement {
+  0%,
+  100% {
+    visibility: visible;
+  }
+  20% {
+    clip-path: polygon(
+      50% 50%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%
+    );
+  }
+  40% {
+    clip-path: polygon(50% 50%, 100% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
+  }
+  60% {
+    clip-path: polygon(50% 50%, 100% 100%, 0% 100%, 0% 0%, 0% 0%, 0% 0%);
+  }
+  80% {
+    clip-path: polygon(50% 50%, 100% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 0%);
+  }
+  100% {
+    border: 0.0625rem var(--color-gray) solid;
+    clip-path: polygon(50% 50%, 100% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 100%);
+  }
+}
+
+@media screen and (max-width: 400px), screen and (max-height: 400px) {
+  html {
+    font-size: max(calc(16 * min(100vw / 450, 100vh / 300)), 0px);
+  }
+}
+
+@media screen and (min-width: 700px) and (min-height: 500px) {
+  .fibonacci{
+    scale: 1.5;
+  }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 600px) {
+  .fibonacci{
+    scale: 2;
+  }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 700px) {
+  .fibonacci{
+    scale: 2.5;
+  }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 1000px) {
+  .fibonacci{
+    scale: 3.5;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) and (min-height: 1000px) {
+  html {
+    font-size: max(100vw / 100, 0px);
+  }
+}
