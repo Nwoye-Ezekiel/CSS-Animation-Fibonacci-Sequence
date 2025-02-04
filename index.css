@@ -132,7 +132,7 @@ body {
   border-radius: 50%;
   position: absolute;
   visibility: hidden;
-  animation: 2s linear forwards;
+  animation: top-left-curve 2s linear forwards;
   border: 0.1rem var(--color-gold) solid;
   clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
 }
@@ -144,7 +144,6 @@ body {
   height: 27.5rem;
   animation-delay: 20.8s;
   animation-duration: 3s;
-  animation-name: top-left-curve;
 }
 
 .curve2 {
@@ -153,7 +152,7 @@ body {
   width: 17rem;
   height: 17rem;
   animation-delay: 19.8s;
-  animation-name: top-right-curve;
+  transform: rotate(90deg);
 }
 
 .curve3 {
@@ -162,7 +161,7 @@ body {
   width: 10.5rem;
   height: 10.5rem;
   animation-delay: 18.5s;
-  animation-name: bottom-right-curve;
+  transform: rotate(180deg);
 }
 
 .curve4 {
@@ -171,7 +170,7 @@ body {
   width: 6.5rem;
   height: 6.5rem;
   animation-delay: 17.15s;
-  animation-name: bottom-left-curve;
+  transform: rotate(270deg);
 }
 
 .curve5 {
@@ -180,7 +179,6 @@ body {
   right: 4.5rem;
   bottom: 1.25rem;
   animation-delay: 15.8s;
-  animation-name: top-left-curve;
 }
 
 .curve6 {
@@ -189,7 +187,7 @@ body {
   height: 2.5rem;
   bottom: 2.75rem;
   animation-delay: 14.45s;
-  animation-name: top-right-curve;
+  transform: rotate(90deg);
 }
 
 .curve7 {
@@ -198,7 +196,7 @@ body {
   height: 1.5rem;
   bottom: 3.25rem;
   animation-delay: 13.1s;
-  animation-name: bottom-right-curve;
+  transform: rotate(180deg);
 }
 
 .curve8 {
@@ -207,7 +205,7 @@ body {
   right: 5.5rem;
   bottom: 3.25rem;
   animation-delay: 11.75s;
-  animation-name: bottom-left-curve;
+  transform: rotate(270deg);
 }
 
 .curve9 {
@@ -216,7 +214,6 @@ body {
   height: 0.5rem;
   bottom: 3.5rem;
   animation-delay: 10.35s;
-  animation-name: top-left-curve;
 }
 
 .curve10 {
@@ -225,7 +222,7 @@ body {
   height: 0.5rem;
   bottom: 3.5rem;
   animation-delay: 9s;
-  animation-name: top-right-curve;
+  transform: rotate(90deg);
 }
 
 @keyframes reveal-border {
@@ -250,54 +247,6 @@ body {
   }
   100% {
     clip-path: polygon(50% 50%, 50% 0%, 0% 0%, 0% 50%);
-  }
-}
-
-@keyframes top-right-curve {
-  0%,
-  100% {
-    visibility: visible;
-  }
-  33.33% {
-    clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%);
-  }
-  66.67% {
-    clip-path: polygon(50% 50%, 100% 50%, 100% 0%, 100% 0%);
-  }
-  100% {
-    clip-path: polygon(50% 50%, 100% 50%, 100% 0%, 50% 0%);
-  }
-}
-
-@keyframes bottom-left-curve {
-  0%,
-  100% {
-    visibility: visible;
-  }
-  33.33% {
-    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%);
-  }
-  66.67% {
-    clip-path: polygon(50% 50%, 0% 50%, 0% 100%, 0% 100%);
-  }
-  100% {
-    clip-path: polygon(50% 50%, 0% 50%, 0% 100%, 50% 100%);
-  }
-}
-
-@keyframes bottom-right-curve {
-  0%,
-  100% {
-    visibility: visible;
-  }
-  33.33% {
-    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%);
-  }
-  66.67% {
-    clip-path: polygon(50% 50%, 50% 100%, 100% 100%, 100% 100%);
-  }
-  100% {
-    clip-path: polygon(50% 50%, 50% 100%, 100% 100%, 100% 50%);
   }
 }
 
