@@ -1,7 +1,7 @@
 :root {
   --color-white: #fff;
   --color-gray: #2f2f2d;
-  --color-gold: #FFD700;
+  --color-gold: #ffd700;
   --color-background: #151513;
 }
 
@@ -36,7 +36,7 @@ body {
   z-index: 1;
   position: absolute;
   visibility: hidden;
-  animation: 5s linear forwards;
+  animation: up-movement 5s linear forwards;
   border: 0.0625rem var(--color-white) solid;
   clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
 }
@@ -46,7 +46,6 @@ body {
   left: 0;
   height: 100%;
   width: 13.75rem;
-  animation-name: up-movement;
 }
 
 .box2 {
@@ -55,7 +54,7 @@ body {
   width: 8.5rem;
   height: 8.5rem;
   animation-delay: 0.5s;
-  animation-name: right-movement;
+  transform: rotate(90deg);
 }
 
 .box3 {
@@ -64,7 +63,6 @@ body {
   width: 5.25rem;
   height: 5.25rem;
   animation-delay: 1s;
-  animation-name: up-movement;
 }
 
 .box4 {
@@ -73,7 +71,7 @@ body {
   width: 3.25rem;
   height: 3.25rem;
   animation-delay: 1.5s;
-  animation-name: left-movement;
+  transform: rotate(-90deg);
 }
 
 .box5 {
@@ -82,7 +80,7 @@ body {
   right: 6.5rem;
   bottom: 3.25rem;
   animation-delay: 2s;
-  animation-name: left-movement;
+  transform: rotate(-90deg);
 }
 
 .box6 {
@@ -91,7 +89,6 @@ body {
   width: 1.25rem;
   height: 1.25rem;
   animation-delay: 2.5s;
-  animation-name: up-movement;
 }
 
 .box7 {
@@ -100,7 +97,7 @@ body {
   height: 0.75rem;
   bottom: 3.25rem;
   animation-delay: 3s;
-  animation-name: left-movement;
+  transform: rotate(-90deg);
 }
 
 .box8 {
@@ -109,7 +106,7 @@ body {
   height: 0.5rem;
   bottom: 3.25rem;
   animation-delay: 3.5s;
-  animation-name: left-movement;
+  transform: rotate(-90deg);
 }
 
 .box9 {
@@ -118,7 +115,7 @@ body {
   height: 0.25rem;
   bottom: 3.75rem;
   animation-delay: 4s;
-  animation-name: right-movement;
+  transform: rotate(90deg);
 }
 
 .box10 {
@@ -127,7 +124,7 @@ body {
   height: 0.25rem;
   bottom: 3.75rem;
   animation-delay: 4.5s;
-  animation-name: left-movement;
+  transform: rotate(-90deg);
 }
 
 .curve {
@@ -327,96 +324,6 @@ body {
   }
 }
 
-@keyframes right-movement {
-  0%,
-  100% {
-    visibility: visible;
-  }
-  20% {
-    clip-path: polygon(50% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
-  }
-  40% {
-    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
-  }
-  60% {
-    clip-path: polygon(
-      50% 50%,
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      100% 100%,
-      100% 100%
-    );
-  }
-  80% {
-    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
-  }
-  100% {
-    border: 0.0625rem var(--color-gray) solid;
-    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
-  }
-}
-
-@keyframes down-movement {
-  0%,
-  100% {
-    visibility: visible;
-  }
-  20% {
-    clip-path: polygon(50% 50%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
-  }
-  40% {
-    clip-path: polygon(
-      50% 50%,
-      100% 0%,
-      100% 100%,
-      100% 100%,
-      100% 100%,
-      100% 100%
-    );
-  }
-  60% {
-    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%, 0% 100%, 0% 100%);
-  }
-  80% {
-    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 0% 0%);
-  }
-  100% {
-    border: 0.0625rem var(--color-gray) solid;
-    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 100% 0%);
-  }
-}
-
-@keyframes left-movement {
-  0%,
-  100% {
-    visibility: visible;
-  }
-  20% {
-    clip-path: polygon(
-      50% 50%,
-      100% 100%,
-      100% 100%,
-      100% 100%,
-      100% 100%,
-      100% 100%
-    );
-  }
-  40% {
-    clip-path: polygon(50% 50%, 100% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
-  }
-  60% {
-    clip-path: polygon(50% 50%, 100% 100%, 0% 100%, 0% 0%, 0% 0%, 0% 0%);
-  }
-  80% {
-    clip-path: polygon(50% 50%, 100% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 0%);
-  }
-  100% {
-    border: 0.0625rem var(--color-gray) solid;
-    clip-path: polygon(50% 50%, 100% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 100%);
-  }
-}
-
 @media screen and (max-width: 400px), screen and (max-height: 400px) {
   html {
     font-size: max(calc(16 * min(100vw / 450, 100vh / 300)), 0px);
@@ -424,25 +331,25 @@ body {
 }
 
 @media screen and (min-width: 700px) and (min-height: 500px) {
-  .fibonacci{
+  .fibonacci {
     scale: 1.5;
   }
 }
 
 @media screen and (min-width: 1000px) and (min-height: 600px) {
-  .fibonacci{
+  .fibonacci {
     scale: 2;
   }
 }
 
 @media screen and (min-width: 1000px) and (min-height: 700px) {
-  .fibonacci{
+  .fibonacci {
     scale: 2.5;
   }
 }
 
 @media screen and (min-width: 1000px) and (min-height: 1000px) {
-  .fibonacci{
+  .fibonacci {
     scale: 3.5;
   }
 }
