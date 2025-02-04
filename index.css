@@ -136,7 +136,7 @@ body {
   position: absolute;
   visibility: hidden;
   animation: 2s linear forwards;
-  border: 0.1rem var(--color-white) solid;
+  border: 0.1rem var(--color-yellow) solid;
   clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
 }
 
